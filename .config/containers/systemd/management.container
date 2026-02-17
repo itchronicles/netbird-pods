@@ -1,0 +1,16 @@
+[Unit]
+Description=Netbird Management Service
+
+[Container]
+ContainerName=management
+Pod=netbird.pod
+Image=docker.io/netbirdio/management:latest
+Network=netbird.network
+Volume=netbird_management_data.volume:/var/lib/netbird:Z
+Volume=/home/netbird/netbird_data/management.json:/etc/netbird/management.json:Z
+Exec=--port 80 --log-file console --log-level info --disable-anonymous-metrics=false --single-account-mode-domain=netbird.selfhosted --dns-domain=netbird.selfhosted --idp-sign-key-refresh-enabled
+LogDriver=journald
+AutoUpdate=registry
+
+[Install]
+WantedBy=multi-user.target default.target

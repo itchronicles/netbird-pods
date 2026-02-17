@@ -1,0 +1,14 @@
+[Unit]
+Description=Netbird Relay Service
+
+[Container]
+ContainerName=relay
+Pod=netbird.pod
+Image=docker.io/netbirdio/relay:latest
+Network=netbird.network
+EnvironmentFile=/home/netbird/netbird_data/relay.env
+LogDriver=journald
+AutoUpdate=registry
+
+[Install]
+WantedBy=multi-user.target default.target

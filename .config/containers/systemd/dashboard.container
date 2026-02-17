@@ -1,0 +1,14 @@
+[Unit]
+Description=Netbird Dashboard
+
+[Container]
+ContainerName=dashboard
+Pod=netbird.pod
+Image=docker.io/netbirdio/dashboard:latest
+Network=netbird.network
+EnvironmentFile=/home/netbird/netbird_data/dashboard.env
+LogDriver=journald
+AutoUpdate=registry
+
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Netbird Pod
+
+[Pod]
+PodName=Netbird
+PublishPort=80:80
+PublishPort=443:443
+PublishPort=3478:3478
+Network=netbird.network
+
+[Install]
+WantedBy=multi-user.target default.target

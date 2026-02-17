@@ -1,0 +1,15 @@
+[Unit]
+Description=Netbird Caddy Proxy
+
+[Container]
+ContainerName=caddy
+Pod=netbird.pod
+Image=docker.io/library/caddy:latest
+Network=netbird.network
+Volume=netbird_caddy_data.volume:/data:Z
+Volume=/home/netbird/netbird_data/Caddyfile:/etc/caddy/Caddyfile:Z
+LogDriver=journald
+AutoUpdate=registry
+
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Netbird Signal Service
+
+[Container]
+ContainerName=signal
+Pod=netbird.pod
+Image=docker.io/netbirdio/signal:latest
+Network=netbird.network
+LogDriver=journald
+AutoUpdate=registry
+
+[Install]
+WantedBy=multi-user.target default.target
