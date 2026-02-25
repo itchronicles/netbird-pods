@@ -3,7 +3,6 @@ Description=Netbird Management Service
 
 [Container]
 ContainerName=management
-Pod=netbird.pod
 Image=docker.io/netbirdio/management:latest
 Network=netbird.network
 Volume=netbird_management_data.volume:/var/lib/netbird:Z

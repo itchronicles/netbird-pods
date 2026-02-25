@@ -3,9 +3,9 @@ Description=Netbird Relay Service
 
 [Container]
 ContainerName=relay
-Pod=netbird.pod
 Image=docker.io/netbirdio/relay:latest
 Network=netbird.network
+PublishPort=3478:3478
 EnvironmentFile=/home/netbird/netbird_data/relay.env
 LogDriver=journald
 AutoUpdate=registry
